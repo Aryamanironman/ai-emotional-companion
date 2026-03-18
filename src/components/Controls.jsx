@@ -5,7 +5,17 @@ import VoiceInput from './VoiceInput';
 const LANGUAGES = [
   { code: 'en-US', label: 'English' },
   { code: 'hi-IN', label: 'हिंदी (Hindi)' },
-  { code: 'es-ES', label: 'Español (Spanish)' }
+  { code: 'es-ES', label: 'Español (Spanish)' },
+  { code: 'fr-FR', label: 'Français (French)' },
+  { code: 'de-DE', label: 'Deutsch (German)' },
+  { code: 'it-IT', label: 'Italiano (Italian)' },
+  { code: 'pt-BR', label: 'Português (Portuguese)' },
+  { code: 'ja-JP', label: '日本語 (Japanese)' },
+  { code: 'ko-KR', label: '한국어 (Korean)' },
+  { code: 'zh-CN', label: '中文 (Chinese)' },
+  { code: 'ru-RU', label: 'Русский (Russian)' },
+  { code: 'ar-SA', label: 'العربية (Arabic)' },
+  { code: 'tr-TR', label: 'Türkçe (Turkish)' }
 ];
 
 const Controls = ({ state, onToggleMic, language, setLanguage }) => {
@@ -21,7 +31,7 @@ const Controls = ({ state, onToggleMic, language, setLanguage }) => {
         <select 
           value={language}
           onChange={(e) => setLanguage(e.target.value)}
-          className="bg-transparent text-sm text-gray-200 outline-none cursor-pointer font-medium appearance-none pr-4"
+          className="bg-transparent text-sm text-gray-200 outline-none cursor-pointer font-medium appearance-none pr-8 relative"
         >
           {LANGUAGES.map(lang => (
             <option key={lang.code} value={lang.code} className="bg-dark-800 text-white">
@@ -29,6 +39,8 @@ const Controls = ({ state, onToggleMic, language, setLanguage }) => {
             </option>
           ))}
         </select>
+        {/* Simple down arrow icon placeholder since appearance-none was used */}
+        <div className="absolute right-6 pointer-events-none text-gray-500">▼</div>
       </div>
 
     </div>
