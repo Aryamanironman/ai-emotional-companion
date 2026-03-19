@@ -9,6 +9,7 @@ const RESPONSES_FALLBACK = {
   en: ["I hear you. Tell me more about that feeling.", "I'm listening closely. Please go on.", "That sounds really tough. I'm here to support you."],
   es: ["Te escucho. Cuéntame más sobre ese sentimiento.", "Estoy aquí escuchándote con atención.", "Eso suena difícil. Estoy contigo para apoyarte."],
   hi: ["मैं सुन रहा हूँ। कृपया अपनी बात जारी रखें।", "मैं आपकी बात ध्यान से सुन रहा हूँ।", "यह काफी मुश्किल लग रहा है। मैं आपके साथ हूँ।"],
+  pa: ["ਮੈਂ ਸੁਣ ਰਿਹਾ ਹਾਂ। ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੀ ਗੱਲ ਜਾਰੀ ਰੱਖੋ।", "ਮੈਂ ਤੁਹਾਡੀ ਗੱਲ ਧਿਆਨ ਨਾਲ ਸੁਣ ਰਿਹਾ ਹਾਂ।", "ਇਹ ਬਹੁਤ ਮੁਸ਼ਕਲ ਲੱਗ ਰਿਹਾ ਹੈ। ਮੈਂ ਤੁਹਾਡੇ ਨਾਲ ਹਾਂ।"],
   default: ["I am here with you. Please continue.", "I am listening closely. Tell me more."]
 };
 
@@ -68,8 +69,8 @@ Personality:
   }
 
   // FALLBACK (Internal logic if no key or API fails)
-  const langDisplay = selectedLang.split('-')[0]; // en, hi, es, etc.
-  const langKey = langDisplay === 'hi' ? 'hi' : (langDisplay === 'es' ? 'es' : (langDisplay === 'en' ? 'en' : 'default'));
+  const langDisplay = selectedLang.split('-')[0]; // en, hi, es, pa, etc.
+  const langKey = langDisplay === 'hi' ? 'hi' : (langDisplay === 'pa' ? 'pa' : (langDisplay === 'es' ? 'es' : (langDisplay === 'en' ? 'en' : 'default')));
   const possible = RESPONSES_FALLBACK[langKey] || RESPONSES_FALLBACK.default;
   const reply = possible[Math.floor(Math.random() * possible.length)];
   

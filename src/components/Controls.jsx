@@ -5,6 +5,7 @@ import VoiceInput from './VoiceInput';
 const LANGUAGES = [
   { code: 'en-US', label: 'English' },
   { code: 'hi-IN', label: 'हिंदी (Hindi)' },
+  { code: 'pa-IN', label: 'ਪੰਜਾਬੀ (Punjabi)' },
   { code: 'es-ES', label: 'Español (Spanish)' },
   { code: 'fr-FR', label: 'Français (French)' },
   { code: 'de-DE', label: 'Deutsch (German)' },
